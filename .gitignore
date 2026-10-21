@@ -1,0 +1,14 @@
+dist/
+*.zip
+*.crx
+*.pem
+
+icons-backup/
+
+.vscode/
+.idea/
+.claude/
+
+Thumbs.db
+desktop.ini
+.DS_Store

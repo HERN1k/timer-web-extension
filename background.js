@@ -26,11 +26,24 @@ chrome.runtime.onInstalled.addListener(async () => {
   }
 });
 
+async function isTimerRunning() {
+  const data = await chrome.storage.local.get('startedAt');
+  return Boolean(data.startedAt);
+}
+
+async function toggleTimer() {
+  if (await isTimerRunning()) {
+    resetTimer();
+  } else {
+    startTimer();
+  }
+}
+
 function startTimer() {
   chrome.storage.local.set({ visible: true, startedAt: Date.now() });
 }
 
-chrome.action.onClicked.addListener(startTimer);
+chrome.action.onClicked.addListener(toggleTimer);
 chrome.commands.onCommand.addListener((command) => {
   if (command === 'start-timer') startTimer();
 });

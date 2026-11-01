@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "name": "Daria’s Hirnyk Timer",
   "short_name": "Daria Timer",
   "description": "Засікає, скільки клієнт чекає на відповідь. Один клік — і час під контролем.",
